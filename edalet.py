@@ -30,8 +30,6 @@ async def yeni_mesaj(event: events.NewMessage.Event):
                       
                       
                       
-                      
-edalet_run = edalet_start.decode("utf8")
-print(">> Edalet qoz kimi işləyir ♿ @RoBotlarimTg @aykhan_s @edalet_22 <<")
-print(f"{edalet_run}")
+      
+print(">> Edalet qoz kimi işləyir  <<")
 Edalet.run_until_disconnected()
