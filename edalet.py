@@ -11,7 +11,6 @@ from telethon import TelegramClient, events
 from telethon.sessions import StringSession
 from telethon.tl.types import ChannelParticipantsAdmins
 from asyncio import sleep
-from Config import Config 
 # Pyrogram----------------------------------------------------------------------------------------------------
 import datetime
 import motor.motor_asyncio
@@ -37,10 +36,7 @@ from pyrogram.errors import (
 from komekçi.edalet import Edalet
 
 
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(name)s - [%(levelname)s] - %(message)s'
-)
+
 LOGGER = logging.getLogger(__name__)
 
 
