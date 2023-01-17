@@ -7,7 +7,7 @@
 # t.me/edalet_22
 
 
-from komekci.edalet import Edalet
+from komekçi.edalet import Edalet
 from telethon import events, Button
 import random
 
