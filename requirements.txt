@@ -1,1 +1,9 @@
-telethon>=1.24.0
+telethon
+cryptg
+requests
+Pyrogram==1.4.9
+tgcrypto
+pymongo[srv]
+aiofiles
+psutil
+motor
