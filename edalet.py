@@ -23,8 +23,8 @@ async def handler(event):
 
 @Edalet.on(events.NewMessage(pattern='(?i)/start+'))
 async def yeni_mesaj(event: events.NewMessage.Event):
-    await event.reply(f"👋🏻 Salam "[{usr.first_name}](tg://user?id={usr.id})" mən @edalet_22 -nin asistaniyam\nMənə start verdiyin hakkında məlumatı Sahibimə dedim 📨")
-f"[{usr.first_name}](tg://user?id={usr.id}) "
+    await event.reply(f"👋🏻 Salam mən [{usr.first_name}](tg://user?id={usr.id}) -nin asistaniyam\nMənə start verdiyin hakkında məlumatı Sahibimə dedim 📨")
+
                       
                       
                       
