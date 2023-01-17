@@ -24,3 +24,14 @@ async def handler(event):
 @edalet.on(events.NewMessage(pattern='(?i)/start+'))
 async def yeni_mesaj(event: events.NewMessage.Event):
     await event.reply(f"👋🏻 Salam mən edalet_22 tərəfindən yaradilmiş ağıllı bir botam\nMənə start verdiyin hakkında məlumatı [Sahibimə](https://t.me/edalet_22) dedim  📨"
+
+                      
+                      
+                      
+                      
+                      
+                      
+edalet_run = edalet_start.decode("utf8")
+print(">> Edalet qoz kimi işləyir ♿ @RoBotlarimTg @aykhan_s @edalet_22 <<")
+print(f"{edalet_run}")
+Edalet.run_until_disconnected()
