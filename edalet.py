@@ -5,3 +5,6 @@
 
 # t.me/RoBotlarimTg | t.me/edaletsup
 # t.me/edalet_22
+
+
+from komekci.edalet import Edalet
