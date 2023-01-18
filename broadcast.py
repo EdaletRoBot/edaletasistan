@@ -1,4 +1,3 @@
-from komekci.edalet import Edalet
 import random, os, logging, asyncio
 from telethon import Button
 from telethon import TelegramClient, events
