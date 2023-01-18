@@ -1,4 +1,4 @@
-from komekci.edalet import Edalet
+
 import random, os, logging, asyncio
 from telethon import Button
 from telethon import TelegramClient, events
@@ -38,10 +38,13 @@ LOGGER = logging.getLogger(__name__)
 api_id = Config.API_ID
 api_hash = Config.API_HASH
 bot_token = Config.BOT_TOKEN
+bot_username = Config.BOT_USERNAME
+support = Config.SUPPORT_CHAT
+owner = Config.OWNER_USERNAME
+bot_name = Config.BOT_NAME
 
 
-
-
+SUDO_USERS = Config.SUDO_USERS
 
 #-#-#-# Pyrogram Başlanğıc #-#-#-#
 app = Client(":memory:", api_id, api_hash, bot_token=bot_token)
@@ -62,7 +65,6 @@ GROUP_SUPPORT = "Edaletsup"
 GONDERME_TURU = False
 OWNER_ID = [5540993505]
 LANGAUGE = "AZ"
-
 
 #---------------------------------------------------------------GROUP GIREKEN SALAMLAMA MSJ------------------------------------------------------------------------------#
 @app.on_message(filters.new_chat_members, group=1)
@@ -493,50 +495,34 @@ class LAN(object):
         USER_UNBAN_NOTIFY = "🎊 Sizə gözəl bir xəbərim var! Artıq əngəliniz qaldırıldı!"
         BLOCKS = "🆔 **İstifadəçi ID**: `{}`\n⏱ **Vaxt**: `{}`\n🗓 **Qadağan edildiyi tarix**: `{}`\n💬 **Səbəb**: `{}`\n\n"
         TOTAL_BLOCK = "🚷 **Ümumi əngəllənən:** `{}`\n\n{}"
-#---------------------------------------------------------------------------------------------------------------------------------------------------------------------#
- 
 	
-#---------------------------------------------------------------Komutları silmek üçün---------------------------------------------------------------------------------#
+
 	
-@app.on_message(filters.command("delcmd") & ~filters.private)
-async def delcmdc(bot: Client, message: Message):
-    if len(message.command) != 2:
-        return await message.reply_text("Bu əmrdən istifadə etmək üçün əmrinizin yanında 'off' və ya 'on' yazın.")
-    durum = message.text.split(None, 1)[1].strip()
-    durum = durum.lower()
-    chat_id = message.chat.id
+client = TelegramClient('client', api_id, api_hash).start(bot_token=bot_token)
 
-    if durum == "on":
-        if await delcmd_is_on(message.chat.id):
-            return await message.reply_text("Komandanın Silinməsi Artıq Aktivdir.")
-        else:
-            await delcmd_on(chat_id)
-            await message.reply_text("Bu söhbət üçün Sil əmri uğurla aktivləşdirildi.")
+anlik_calisan = []
 
-    elif durum == "off":
-        await delcmd_off(chat_id)
-        await message.reply_text("Komanda Silmə funksiyası bu Söhbət üçün uğurla deaktiv edildi.")
-    else:
-        await message.reply_text("Bu əmrdən istifadə etmək üçün əmrinizin yanında 'off' və ya 'on' yazın.")
-
-  
+tekli_calisan = []
+  		
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------#
-  
-@Edalet.on(events.NewMessage(pattern='(?i)/start+'))
-async def yeni_mesaj(event: events.NewMessage.Event):
-    await event.reply(f"👋🏻 Salam mən @edalet_22 nin asistaniyam\nMənə start verdiyin hakkında məlumatı Sahibimə dedim 📨")
- 
 
+	
 
-@Edalet.on(events.ChatAction)
+	
+	
+	
+@client.on(events.NewMessage(pattern='/offline'))
 async def handler(event):
-    if event.user_joined:
-        await event.reply(f"Salam qrupa xoş gəldin")
-    
-    
-    
-
+    # Kimsə "Salam" və başqa bir şey deyəndə cavab verin
+    if str(event.sender_id) not in SUDO_USERS:
+        return await event.reply("__Sən mənə sahib deyilsən!__")
+    await event.reply('**Qoz kimiyəm narahat olma** \n https://t.me/EdaletSup \n\n┈┈┈┈┈╱▔▔▔▔▔╲┈╭━━\n┈┏╮╭┓▏┈┈┈╭╮┈▏┃╭╮┈\n┈╰╮╭╯▏┈┈┣━━━▏╰┳━\n┈┈┃╰╱┈┈┈╰━━━▏━╯┈\n┈┈┈╲▂▂▂▂▂▂▂╱┈┈┈┈',
+		     buttons=(
+	             [Button.url('Sahibi','https://t.me/edalet_22'),
+	             Button.url('Group','https://t.me/EdaletSup')],
+                    ),
+                    link_preview=False)
 
 print(">> Bot işləyir narahat olmayın. @edalet_22 Məlumat almaq üçün <<")
 app.start()
-Edalet.run_until_disconnected()
+client.run_until_disconnected()
