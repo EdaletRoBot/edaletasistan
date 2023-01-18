@@ -507,8 +507,7 @@ class LAN(object):
 
 
 	
-
-
 print(">> Bot işləyir narahat olmayın. @edalet_22 Məlumat almaq üçün <<")
-app.start()
-app.run()
+bot.run()
+
+
