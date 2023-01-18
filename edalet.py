@@ -519,7 +519,7 @@ async def delcmdc(bot: Client, message: Message):
     else:
         await message.reply_text("Bu əmrdən istifadə etmək üçün əmrinizin yanında 'off' və ya 'on' yazın.")
 
-client = TelegramClient('client', api_id, api_hash).start(bot_token=bot_token)
+Edalet = TelegramClient('Edalet', API_ID, API_HASH).start(bot_token=bot_token)
 
 
   
