@@ -6,7 +6,7 @@ from telethon.tl.types import ChannelParticipantsAdmins
 from telethon import events, Button
 from asyncio import sleep
 from Config import Config 
-from komekci.edalet import Edalet
+from komekci.edaletconfig import Edalet
 # Pyrogram----------------------------------------------------------------------------------------------------
 import datetime
 import motor.motor_asyncio
