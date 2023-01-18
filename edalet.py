@@ -4,6 +4,7 @@ from telethon import Button
 from telethon import TelegramClient, events
 from telethon.sessions import StringSession
 from telethon.tl.types import ChannelParticipantsAdmins
+from telethon import events, Button
 from asyncio import sleep
 from Config import Config 
 # Pyrogram----------------------------------------------------------------------------------------------------
