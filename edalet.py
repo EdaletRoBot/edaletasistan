@@ -502,26 +502,12 @@ class LAN(object):
  		
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------#
 
-API_ID = 28054551
-API_HASH = "64a0620c2644ceff0c1058a4ffc861ad"
-bot_token = "5883816340:AAFJpGNHNPNvogeKaLH0duNJjpchsmQ1UOg"
 
-# Edalet
-Edalet = TelegramClient('Edalet', api_id, api_hash).start(bot_token=bot_token)
 
 
 
 	
-@Edalet.on(events.NewMessage(pattern='/offline'))
-async def handler(event):
-    if str(event.sender_id) not in SUDO_USERS:
-        return await event.reply("__Sən mənə sahib deyilsən!__")
-    await event.reply('**Qoz kimiyəm narahat olma** \n https://t.me/EdaletSup \n\n┈┈┈┈┈╱▔▔▔▔▔╲┈╭━━\n┈┏╮╭┓▏┈┈┈╭╮┈▏┃╭╮┈\n┈╰╮╭╯▏┈┈┣━━━▏╰┳━\n┈┈┃╰╱┈┈┈╰━━━▏━╯┈\n┈┈┈╲▂▂▂▂▂▂▂╱┈┈┈┈',
-		     buttons=(
-	             [Button.url('Sahibi','https://t.me/edalet_22'),
-	             Button.url('Group','https://t.me/EdaletSup')],
-                    ),
-                    link_preview=False)
+
 
 print(">> Bot işləyir narahat olmayın. @edalet_22 Məlumat almaq üçün <<")
 app.start()
