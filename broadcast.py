@@ -32,16 +32,17 @@ from pyrogram.errors import (
 app = Client(":memory:", api_id, api_hash, bot_token=bot_token)
 
 
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(name)s - [%(levelname)s] - %(message)s'
-)
+
 LOGGER = logging.getLogger(__name__)
 
 
-api_id = Config.API_ID
-api_hash = Config.API_HASH
-bot_token = Config.BOT_TOKEN
+api_id = API_ID
+api_hash = API_HASH
+bot_token = bot_token
+
+API_ID = 28054551
+API_HASH = "64a0620c2644ceff0c1058a4ffc861ad"
+bot_token = "5883816340:AAFJpGNHNPNvogeKaLH0duNJjpchsmQ1UOg"
 
 
 # Qruplara yayım mesajı
