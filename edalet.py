@@ -502,12 +502,12 @@ class LAN(object):
  		
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------#
 
-@bot.on_message(filters.command('start') & filters.private)
+@app.on_message(filters.command('start') & filters.private)
 def command1(bot, message):
-    bot.send_message(message.chat.id, "👋🏻 Salam mən @edalet_22 tərəfindən hazırlanan bir botam\nMənə start verdiyin hakkında məlumatı Sahibimə dedim 📨\nNəyi bacara bildiklərimi görmək üçün /help yazn\nNot-Hələ heç hazır deyiləm 😒")
+    bot.send_message(message.chat.id, "👋🏻 Salam mən @edalet_22 tərəfindən hazırlanan bir botam\nMənə start verdiyin hakkında məlumatı Sahibimə dedim 📨\n\nNəyi bacara bildiklərimi görmək üçün /help yazn\n\nNot-Hələ heç hazır deyiləm 😒")
 
 
-@bot.on_message(filters.command('help') & filters.private)
+@app.on_message(filters.command('help') & filters.private)
 def command1(bot, message):
     bot.send_message(message.chat.id, "Hələki heçbirşeyim yoxdu")
 
