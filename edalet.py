@@ -1,22 +1,15 @@
-# Bu repo edalet_22 tərəfindən 18.01.2023 tarixində yığılıb
-# Bu repodan icazəsiz hər hansı kodu sətri məlumatı kopyalıyıb
-# Öz adına çıxaran peysərdi
-# Bu yazıları silmədən işlədin
-
-# t.me/RoBotlarimTg | t.me/edaletsup
-# t.me/edalet_22
-
+from komekci.edalet import Edalet
 import random, os, logging, asyncio
 from telethon import Button
 from telethon import TelegramClient, events
 from telethon.sessions import StringSession
 from telethon.tl.types import ChannelParticipantsAdmins
 from asyncio import sleep
+from Config import Config 
 # Pyrogram----------------------------------------------------------------------------------------------------
 import datetime
 import motor.motor_asyncio
 from motor.motor_asyncio import AsyncIOMotorClient as MongoClient
-from pyrogram import Client, filters, __version__
 import asyncio
 import datetime
 import shutil, psutil, traceback, os
@@ -35,29 +28,29 @@ from pyrogram.errors import (
 )
 
 
-from telethon import TelegramClient
 
-# Config məlumatları
-
-# Telegram Client (Telethon)
-API_ID = 28054551
-API_HASH = "64a0620c2644ceff0c1058a4ffc861ad"
-bot_token = "5883816340:AAFJpGNHNPNvogeKaLH0duNJjpchsmQ1UOg"
-
-# Edalet
-Edalet = TelegramClient('Edalet', API_ID, API_HASH).start(bot_token=bot_token)
-
-
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(name)s - [%(levelname)s] - %(message)s'
+)
 LOGGER = logging.getLogger(__name__)
 
-api_id = API_ID
-api_hash = API_HASH
-bot_token = bot_token 
+
+api_id = Config.API_ID
+api_hash = Config.API_HASH
+bot_token = Config.BOT_TOKEN
 
 
+SUDO_USERS = Config.SUDO_USERS
 
-# app
+#-#-#-# Pyrogram Başlanğıc #-#-#-#
 app = Client(":memory:", api_id, api_hash, bot_token=bot_token)
+
+
+
+# Qruplara yayım mesajı
+
+
 
 
 ############## DEĞİŞKENLER ##############
@@ -71,8 +64,24 @@ OWNER_ID = [5540993505]
 LANGAUGE = "AZ"
 
 
+#---------------------------------------------------------------GROUP GIREKEN SALAMLAMA MSJ------------------------------------------------------------------------------#
+@app.on_message(filters.new_chat_members, group=1)
+async def hg(bot: Client, msg: Message):
+    for new_user in msg.new_chat_members:
+        if str(new_user.id) == str(Config.BOT_ID):
+            await msg.reply(
+                f'''`Salam` {msg.from_user.mention} `Məni` {msg.chat.title} `Qrupa əlavə etdiyiniz üçün təşəkkürlər⚡️` \n\n **🤖Qruplardakı userləri tag Edmə üçün Yaradıldım.\n🤖Kömək üçün /start yazmaq kifayətdir.✨**''')
+#------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
 
 
+#-------------------------------------------------------------OWNERS SALAMLAMA MSJ---------------------------------------------------------------------------------------#
+      
+#	elif str(new_user.id) == str(Config.OWNER_ID):
+#           await msg.reply('🤖 [Ədalət 𝗧𝗮𝗴𝗴𝗲𝗿](https://t.me/EdaletSup)-un Sahibi, Qrupa Qatıldı.\n Xoş Gəldin  Aramıza Sahib, Necəsən?🥰.')
+
+	
+	
+	
 #-------------------------------------------------------------VERİTABANI VERİ GİRİŞ ÇIKIŞI---------------------------------------------------------------------------------------#
  
 class Database: 
@@ -484,18 +493,40 @@ class LAN(object):
         USER_UNBAN_NOTIFY = "🎊 Sizə gözəl bir xəbərim var! Artıq əngəliniz qaldırıldı!"
         BLOCKS = "🆔 **İstifadəçi ID**: `{}`\n⏱ **Vaxt**: `{}`\n🗓 **Qadağan edildiyi tarix**: `{}`\n💬 **Səbəb**: `{}`\n\n"
         TOTAL_BLOCK = "🚷 **Ümumi əngəllənən:** `{}`\n\n{}"
-                      
-            
+#---------------------------------------------------------------------------------------------------------------------------------------------------------------------#
+ 
+	
+#---------------------------------------------------------------Komutları silmek üçün---------------------------------------------------------------------------------#
+	
+@app.on_message(filters.command("delcmd") & ~filters.private)
+async def delcmdc(bot: Client, message: Message):
+    if len(message.command) != 2:
+        return await message.reply_text("Bu əmrdən istifadə etmək üçün əmrinizin yanında 'off' və ya 'on' yazın.")
+    durum = message.text.split(None, 1)[1].strip()
+    durum = durum.lower()
+    chat_id = message.chat.id
 
-            
-#---------------------------------------------------------------Telegram Clienti---------------------------------------------------------------------------------#
-           
-       
-                      
-#----------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
-    
-    
-#---------------------------------------------------------------Qrupa yeni istifadəçi qoşulanda---------------------------------------------------------------------------------#
+    if durum == "on":
+        if await delcmd_is_on(message.chat.id):
+            return await message.reply_text("Komandanın Silinməsi Artıq Aktivdir.")
+        else:
+            await delcmd_on(chat_id)
+            await message.reply_text("Bu söhbət üçün Sil əmri uğurla aktivləşdirildi.")
+
+    elif durum == "off":
+        await delcmd_off(chat_id)
+        await message.reply_text("Komanda Silmə funksiyası bu Söhbət üçün uğurla deaktiv edildi.")
+    else:
+        await message.reply_text("Bu əmrdən istifadə etmək üçün əmrinizin yanında 'off' və ya 'on' yazın.")
+
+        
+               
+#---------------------------------------------------------------------------------------------------------------------------------------------------------------------#
+          
+Edalet = TelegramClient('Edalet', api_id, api_hash).start(bot_token=bot_token)
+  
+#---------------------------------------------------------------------------------------------------------------------------------------------------------------------#
+  
 
 @Edalet.on(events.ChatAction)
 async def handler(event):
@@ -507,19 +538,8 @@ async def handler(event):
 @Edalet.on(events.NewMessage(pattern='(?i)/start+'))
 async def yeni_mesaj(event: events.NewMessage.Event):
     await event.reply(f"👋🏻 Salam mən @edalet_22 nin asistaniyam\nMənə start verdiyin hakkında məlumatı Sahibimə dedim 📨")
+    
+    
 
-                      
-                 
-                
-                
-                
-           
-        
-        
-        
-        
-                
-                      
-      
 print(">> Edalet qoz kimi işləyir  <<")
 Edalet.run_until_disconnected()
