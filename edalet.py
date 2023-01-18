@@ -519,22 +519,16 @@ async def delcmdc(bot: Client, message: Message):
     else:
         await message.reply_text("Bu əmrdən istifadə etmək üçün əmrinizin yanında 'off' və ya 'on' yazın.")
 
-Edalet = TelegramClient('Edalet', API_ID, API_HASH).start(bot_token=bot_token)
-
-
-API_ID = 28054551
-API_HASH = "64a0620c2644ceff0c1058a4ffc861ad"
-bot_token = "5883816340:AAFJpGNHNPNvogeKaLH0duNJjpchsmQ1UOg"
   
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------#
   
-@client.on(events.NewMessage(pattern='(?i)/start+'))
+@Edalet.on(events.NewMessage(pattern='(?i)/start+'))
 async def yeni_mesaj(event: events.NewMessage.Event):
     await event.reply(f"👋🏻 Salam mən @edalet_22 nin asistaniyam\nMənə start verdiyin hakkında məlumatı Sahibimə dedim 📨")
  
 
 
-@client.on(events.ChatAction)
+@Edalet.on(events.ChatAction)
 async def handler(event):
     if event.user_joined:
         await event.reply(f"Salam qrupa xoş gəldin")
@@ -545,4 +539,4 @@ async def handler(event):
 
 print(">> Bot işləyir narahat olmayın. @edalet_22 Məlumat almaq üçün <<")
 app.start()
-client.run_until_disconnected()
+Edalet.run_until_disconnected()
