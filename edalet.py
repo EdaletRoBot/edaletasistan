@@ -1,12 +1,6 @@
 from komekci.edalet import Edalet
      
 
-@Edalet.on(events.ChatAction)
-async def handler(event):
-    if event.user_joined:
-        await event.reply(f"Salam qrupa xoş gəldin")
-        
-#----------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
 
 @Edalet.on(events.NewMessage(pattern='(?i)/start+'))
 async def yeni_mesaj(event: events.NewMessage.Event):
