@@ -11,7 +11,7 @@ class Config():
     BOT_NAME = os.environ.get("BOT_NAME","EdaletRoBot")
     BOT_ID = int(os.environ.get("BOT_ID","5883816340"))
     SUDO_USERS = os.environ.get("SUDO_USERS","edalet_22").split()
-    SUPPORT_CHAT = os.environ.get("SUPPORT_CHAT","edaletsup")
+    SUPPORT_CHAT = os.environ.get("SUPPORT_CHAT","5540993505")
     OWNER_ID = int(os.environ.get("OWNER_ID","5540993505"))
     OWNER_USERNAME = os.environ.get("OWNER_USERNAME","edalet_22")
     
