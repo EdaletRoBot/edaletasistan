@@ -504,7 +504,7 @@ class LAN(object):
 
 @app.on_message(filters.command('start') & filters.private)
 def command1(bot, message):
-    bot.send_message(message.chat.id, "👋🏻 Salam mən @edalet_22 tərəfindən hazırlanan bir botam\nMənə start verdiyin hakkında məlumatı Sahibimə dedim 📨\n\nNəyi bacara bildiklərimi görmək üçün /help yazn\n\nNot-Hələ heç hazır deyiləm 😒")
+    bot.send_message(message.chat.id, "👋🏻 Salam mən @edalet_22 tərəfindən hazırlanan bir botam\nMənə start verdiyin hakkında məlumatı Sahibimə dedim 📨\n\nNəyi bacara bildiklərimi görmək üçün\n/help yazn\n\nNot-Hələ heç hazır deyiləm 😒")
 
 
 @app.on_message(filters.command('help') & filters.private)
