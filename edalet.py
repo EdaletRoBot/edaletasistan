@@ -502,9 +502,14 @@ class LAN(object):
  		
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------#
 
-@app.on_message(filters.private)
-async def start(client, message):
-    await message.reply(f"👋🏻 Salam mən @edalet_22 nin asistaniyam\nMənə start verdiyin hakkında məlumatı Sahibimə dedim 📨")
+@bot.on_message(filters.command('start') & filters.private)
+def command1(bot, message):
+    bot.send_message(message.chat.id, "👋🏻 Salam mən @edalet_22 tərəfindən hazırlanan bir botam\nMənə start verdiyin hakkında məlumatı Sahibimə dedim 📨\nNəyi bacara bildiklərimi görmək üçün /help yazn\nNot-Hələ heç hazır deyiləm 😒")
+
+
+@bot.on_message(filters.command('help') & filters.private)
+def command1(bot, message):
+    bot.send_message(message.chat.id, "Hələki heçbirşeyim yoxdu")
 
 
 
