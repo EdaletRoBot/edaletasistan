@@ -6,6 +6,7 @@ from telethon.tl.types import ChannelParticipantsAdmins
 from telethon import events, Button
 from asyncio import sleep
 from Config import Config 
+from komekci.edalet import Edalet
 # Pyrogram----------------------------------------------------------------------------------------------------
 import datetime
 import motor.motor_asyncio
@@ -498,20 +499,15 @@ class LAN(object):
 	
 
 	
-client = TelegramClient('client', api_id, api_hash).start(bot_token=bot_token)
 
-anlik_calisan = []
-
-tekli_calisan = []
-  		
+ 		
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------#
 
 
 
 	
-@client.on(events.NewMessage(pattern='/offline'))
+@Edalet.on(events.NewMessage(pattern='/offline'))
 async def handler(event):
-    # Kimsə "Salam" və başqa bir şey deyəndə cavab verin
     if str(event.sender_id) not in SUDO_USERS:
         return await event.reply("__Sən mənə sahib deyilsən!__")
     await event.reply('**Qoz kimiyəm narahat olma** \n https://t.me/EdaletSup \n\n┈┈┈┈┈╱▔▔▔▔▔╲┈╭━━\n┈┏╮╭┓▏┈┈┈╭╮┈▏┃╭╮┈\n┈╰╮╭╯▏┈┈┣━━━▏╰┳━\n┈┈┃╰╱┈┈┈╰━━━▏━╯┈\n┈┈┈╲▂▂▂▂▂▂▂╱┈┈┈┈',
@@ -523,4 +519,4 @@ async def handler(event):
 
 print(">> Bot işləyir narahat olmayın. @edalet_22 Məlumat almaq üçün <<")
 app.start()
-client.run_until_disconnected()
+Edalet.run_until_disconnected()
