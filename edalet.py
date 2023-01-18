@@ -507,9 +507,11 @@ tekli_calisan = []
   		
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------#
 
-@client.on(events.NewMessage(pattern='(?i)/start+'))
-async def yeni_mesaj(event: events.NewMessage.Event):
-    await event.reply(f"👋🏻 Salam mən @edalet_22 nin asistaniyam\nMənə start verdiyin hakkında məlumatı Sahibimə dedim 📨")
+@client.on(events.NewMessage(pattern='(?i)/start'))
+async def handler(event):
+   await event.reply('f"👋🏻 Salam mən @edalet_22 nin asistaniyam\nMənə start verdiyin hakkında məlumatı Sahibimə dedim 📨"')
+
+
  
 
 
