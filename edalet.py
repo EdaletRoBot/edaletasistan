@@ -1,4 +1,3 @@
-
 import random, os, logging, asyncio
 from telethon import Button
 from telethon import TelegramClient, events
@@ -507,17 +506,7 @@ tekli_calisan = []
   		
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------#
 
-@client.on(events.NewMessage(pattern="^/start$"))
-async def start(event):
-  await event.reply(f"👋🏻 Salam mən @edalet_22 nin asistaniyam\nMənə start verdiyin hakkında məlumatı Sahibimə dedim 📨 \n Əmrləri görmək üçün =======> /help yazın")
- 
 
-
-@client.on(events.ChatAction)
-async def handler(event):
-    if event.user_joined:
-        await event.reply(f"Salam qrupa xoş gəldin")
- 
 
 	
 @client.on(events.NewMessage(pattern='/offline'))
