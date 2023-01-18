@@ -6,7 +6,6 @@ from telethon.tl.types import ChannelParticipantsAdmins
 from telethon import events, Button
 from asyncio import sleep
 from Config import Config 
-from komekci.edaletconfig import Edalet
 # Pyrogram----------------------------------------------------------------------------------------------------
 import datetime
 import motor.motor_asyncio
@@ -502,6 +501,13 @@ class LAN(object):
 
  		
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------#
+
+API_ID = 28054551
+API_HASH = "64a0620c2644ceff0c1058a4ffc861ad"
+bot_token = "5883816340:AAFJpGNHNPNvogeKaLH0duNJjpchsmQ1UOg"
+
+# Edalet
+Edalet = TelegramClient('Edalet', API_ID, API_HASH).start(bot_token=bot_token)
 
 
 
