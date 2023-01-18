@@ -35,13 +35,10 @@ app = Client(":memory:", api_id, api_hash, bot_token=bot_token)
 LOGGER = logging.getLogger(__name__)
 
 
-api_id = API_ID
-api_hash = API_HASH
-bot_token = bot_token
-
-API_ID = 28054551
-API_HASH = "64a0620c2644ceff0c1058a4ffc861ad"
+api_id = 28054551
+api_hash = "64a0620c2644ceff0c1058a4ffc861ad"
 bot_token = "5883816340:AAFJpGNHNPNvogeKaLH0duNJjpchsmQ1UOg"
+
 
 
 # Qruplara yayım mesajı
