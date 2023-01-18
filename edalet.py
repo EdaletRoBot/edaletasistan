@@ -1,5 +1,6 @@
 from komekci.edalet import Edalet
-     
+from telethon import events, Button
+import random    
 
 
 @Edalet.on(events.NewMessage(pattern='(?i)/start+'))
