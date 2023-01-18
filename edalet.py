@@ -502,6 +502,9 @@ class LAN(object):
  		
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------#
 
+@app.on_message(filters.private)
+async def start(client, message):
+    await message.reply(f"👋🏻 Salam mən @edalet_22 nin asistaniyam\nMənə start verdiyin hakkında məlumatı Sahibimə dedim 📨")
 
 
 
