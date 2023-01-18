@@ -1,5 +1,4 @@
 from telethon import TelegramClient
-from pyrogram import Client, filters, __version__
 
 # Config məlumatları
 
