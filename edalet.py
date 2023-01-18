@@ -511,4 +511,4 @@ class LAN(object):
 
 print(">> Bot işləyir narahat olmayın. @edalet_22 Məlumat almaq üçün <<")
 app.start()
-Edalet.run_until_disconnected()
+app.run()
