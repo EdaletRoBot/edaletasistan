@@ -1,4 +1,3 @@
-from komekci.edalet import API_ID, API_HASH, bot_token
 import random, os, logging, asyncio
 from telethon import Button
 from telethon import TelegramClient, events
