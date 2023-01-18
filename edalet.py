@@ -16,6 +16,7 @@ from asyncio import sleep
 import datetime
 import motor.motor_asyncio
 from motor.motor_asyncio import AsyncIOMotorClient as MongoClient
+from pyrogram import Client, filters, __version__
 import asyncio
 import datetime
 import shutil, psutil, traceback, os
