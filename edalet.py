@@ -5,6 +5,7 @@
 
 # t.me/RoBotlarimTg | t.me/edaletsup
 # t.me/edalet_22
+
 import random, os, logging, asyncio
 from telethon import Button
 from telethon import TelegramClient, events
@@ -34,34 +35,18 @@ from pyrogram.errors import (
 
 
 from komekçi.edalet import Edalet
-from komekçi.edalet import app
-
 
 
 LOGGER = logging.getLogger(__name__)
 
-
-#---------------------------------------------------------------Qrupa yeni istifadəçi qoşulanda---------------------------------------------------------------------------------#
-
-@Edalet.on(events.ChatAction)
-async def handler(event):
-    if event.user_joined:
-        await event.reply(f"Salam qrupa xoş gəldin")
-        
-#----------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
-
-@Edalet.on(events.NewMessage(pattern='(?i)/start+'))
-async def yeni_mesaj(event: events.NewMessage.Event):
-    await event.reply(f"👋🏻 Salam mən @edalet_22 nin asistaniyam\nMənə start verdiyin hakkında məlumatı Sahibimə dedim 📨")
-
-                      
- 
+api_id = Config.API_ID
+api_hash = Config.API_HASH
+bot_token = Config.BOT_TOKEN
 
 
 
-
-
-
+# app
+app = Client(":memory:", api_id, api_hash, bot_token=bot_token)
 
 
 ############## DEĞİŞKENLER ##############
@@ -73,6 +58,7 @@ GROUP_SUPPORT = "Edaletsup"
 GONDERME_TURU = False
 OWNER_ID = [5540993505]
 LANGAUGE = "AZ"
+
 
 
 
@@ -488,7 +474,40 @@ class LAN(object):
         BLOCKS = "🆔 **İstifadəçi ID**: `{}`\n⏱ **Vaxt**: `{}`\n🗓 **Qadağan edildiyi tarix**: `{}`\n💬 **Səbəb**: `{}`\n\n"
         TOTAL_BLOCK = "🚷 **Ümumi əngəllənən:** `{}`\n\n{}"
                       
+            
+
+            
+#---------------------------------------------------------------Telegram Clienti---------------------------------------------------------------------------------#
+           
+       
                       
+#----------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
+    
+    
+#---------------------------------------------------------------Qrupa yeni istifadəçi qoşulanda---------------------------------------------------------------------------------#
+
+@Edalet.on(events.ChatAction)
+async def handler(event):
+    if event.user_joined:
+        await event.reply(f"Salam qrupa xoş gəldin")
+        
+#----------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
+
+@Edalet.on(events.NewMessage(pattern='(?i)/start+'))
+async def yeni_mesaj(event: events.NewMessage.Event):
+    await event.reply(f"👋🏻 Salam mən @edalet_22 nin asistaniyam\nMənə start verdiyin hakkında məlumatı Sahibimə dedim 📨")
+
+                      
+                 
+                
+                
+                
+           
+        
+        
+        
+        
+                
                       
       
 print(">> Edalet qoz kimi işləyir  <<")
