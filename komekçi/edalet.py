@@ -11,5 +11,3 @@ bot_token = "5883816340:AAFJpGNHNPNvogeKaLH0duNJjpchsmQ1UOg"
 # Edalet
 Edalet = TelegramClient('Edalet', API_ID, API_HASH).start(bot_token=bot_token)
 
-# app
-app = Client(":memory:", api_id, api_hash, bot_token=bot_token)
