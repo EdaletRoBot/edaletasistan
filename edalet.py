@@ -6,8 +6,6 @@ from telethon.tl.types import ChannelParticipantsAdmins
 from telethon import events, Button
 from asyncio import sleep
 from Config import Config 
-#-------
-from aiohttp import ClientSession
 # Pyrogram----------------------------------------------------------------------------------------------------
 import datetime
 import motor.motor_asyncio
@@ -522,31 +520,6 @@ async def make_carbon(code):
     image.name = "carbon.png"
     return image
 
-
-aiohttpsession = ClientSession()
-
-@app.on_message(filters.command("carbon"))
-async def carbon_func(_, message):
-    if not message.reply_to_message:
-        return await message.reply_text(
-            "ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴛᴇxᴛ ᴍᴇssᴀɢᴇ ᴛᴏ ᴍᴀᴋᴇ ᴄᴀʀʙᴏɴ."
-        )
-    if not message.reply_to_message.text:
-        return await message.reply_text(
-            "ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴛᴇxᴛ ᴍᴇssᴀɢᴇ ᴛᴏ ᴍᴀᴋᴇ ᴄᴀʀʙᴏɴ."
-        )
-    user_id = message.from_user.id
-    m = await message.reply_text("ᴘʀᴏᴄᴇssɪɴɢ...")
-    carbon = await make_carbon(message.reply_to_message.text)
-    await m.edit("ᴜᴘʟᴏᴀᴅɪɴɢ..")
-    await message.reply_photo(
-        photo=carbon,
-        caption="**MADE WITH ❤️ BY > @edalet_22**",
-        reply_markup=InlineKeyboardMarkup( [[
-            InlineKeyboardButton("JOIN CHANNEL", url="https://t.me/edaletproject")                  
-            ]]
-        )
-    )
 
 
 
