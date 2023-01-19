@@ -20,6 +20,7 @@ import traceback
 import aiofiles
 from pyrogram import Client, filters, __version__
 from pyrogram.types import Message
+from pyrogram import filters
 from pyrogram.errors import (
     FloodWait,
     InputUserDeactivated,
