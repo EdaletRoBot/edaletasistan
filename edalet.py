@@ -6,7 +6,7 @@ from telethon.tl.types import ChannelParticipantsAdmins
 from telethon import events, Button
 from asyncio import sleep
 from Config import Config 
--------
+#-------
 from aiohttp import ClientSession
 # Pyrogram----------------------------------------------------------------------------------------------------
 import datetime
