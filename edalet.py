@@ -551,12 +551,6 @@ async def carbon_func(bot: app, message: Message):
     carbon.close()
 
 
-add_command_help(
-    "carbon",
-    [
-        ["carbon <reply>", "Carbonize text with default settings."],
-    ],
-)
 
 
 
