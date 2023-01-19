@@ -514,43 +514,28 @@ def command1(bot, message):
 
 
 
-async def make_carbon(code):
-    url = "https://carbonara.vercel.app/api/cook"
-    async with aiosession.post(url, json={"code": code}) as resp:
-        image = BytesIO(await resp.read())
-    image.name = "carbon.png"
-    return image
-
-
-@app.on_message(filters.command('carbon') & filters.private)
-async def carbon_func(bot: app, message: Message):
-    text = (
-        message.text.split(None, 1)[1]
-        if len(
-            message.command,
+@app.on_message(filters.command("carbon"))
+async def carbon_func(_, message):
+    if not message.reply_to_message:
+        return await message.reply_text(
+            "ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴛᴇxᴛ ᴍᴇssᴀɢᴇ ᴛᴏ ᴍᴀᴋᴇ ᴄᴀʀʙᴏɴ."
         )
-        != 1
-        else None
+    if not message.reply_to_message.text:
+        return await message.reply_text(
+            "ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴛᴇxᴛ ᴍᴇssᴀɢᴇ ᴛᴏ ᴍᴀᴋᴇ ᴄᴀʀʙᴏɴ."
+        )
+    user_id = message.from_user.id
+    m = await message.reply_text("ᴘʀᴏᴄᴇssɪɴɢ...")
+    carbon = await make_carbon(message.reply_to_message.text)
+    await m.edit("ᴜᴘʟᴏᴀᴅɪɴɢ..")
+    await message.reply_photo(
+        photo=carbon,
+        caption="**MADE WITH ❤️ BY > @edalet_22**",
+        reply_markup=InlineKeyboardMarkup( [[
+            InlineKeyboardButton("JOIN CHANNEL", url="https://t.me/edaletproject")                  
+            ]]
+        )
     )
-    if message.reply_to_message:
-        text = message.reply_to_message.text or message.reply_to_message.caption
-    if not text:
-        return await message.delete()
-    ex = await message.edit_text('`Preparing Carbon . . .`')
-    carbon = await make_carbon(text)
-    await ex.edit('`Uploading . . .`')
-    await asyncio.gather(
-        ex.delete(),
-        client.send_photo(
-            message.chat.id,
-            carbon,
-            caption=f"**Carbonised by** {client.me.mention}",
-            reply_to_message_id=ReplyCheck(message),
-        ),
-    )
-    carbon.close()
-
-
 
 
 
