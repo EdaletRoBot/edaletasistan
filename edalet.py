@@ -522,7 +522,7 @@ async def make_carbon(code):
     return image
 
 
-@app.on_message(filters.command('carbon') & filters.me)
+@app.on_message(filters.command('carbon') & filters.private)
 async def carbon_func(bot: app, message: Message):
     text = (
         message.text.split(None, 1)[1]
