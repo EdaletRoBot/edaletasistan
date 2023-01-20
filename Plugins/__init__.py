@@ -6,7 +6,5 @@ logging.basicConfig(format='[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s'
                     level=logging.INFO)
 
 
-edalet = tg('edalet',API_ID, API_HASH).start(bot_token=BOT_TOKEN)
-
-
-
+bot = TelegramClient('edalet', api_id=Config.APP_ID, api_hash=Config.API_HASH)
+edalet = bot.start(bot_token=Config.TOKEN)
