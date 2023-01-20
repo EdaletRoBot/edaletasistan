@@ -1,1 +1,1 @@
-worker: python3 edalet.py
+bot: python3 -m Plugins 
