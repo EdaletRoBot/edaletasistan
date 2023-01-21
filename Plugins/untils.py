@@ -5,7 +5,7 @@ from pathlib import Path
 
 def load_mahoaga(plugin_name):
     path = Path(f"Plugins/edaletbalaev/{plugin_name}.py")
-    name = "Plugins.edalet.{}".format(plugin_name)
+    name = "Plugins.edaletbalaev.{}".format(plugin_name)
     spec = importlib.util.spec_from_file_location(name, path)
     load = importlib.util.module_from_spec(spec)
     load.logger = logging.getLogger(plugin_name)
