@@ -7,7 +7,7 @@ from Plugins import edalet
 logging.basicConfig(format='[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s',
                     level=logging.INFO)
 
-path = "Plugins/edalet/*.py"
+path = "Plugins/edaletbalaev/*.py"
 files = glob.glob(path)
 for name in files:
     with open(name) as a:
