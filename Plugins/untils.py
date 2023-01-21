@@ -3,7 +3,7 @@ import logging
 import importlib
 from pathlib import Path
 
-def load_mahoaga(plugin_name):
+def load_edaletbalaev(plugin_name):
     path = Path(f"Plugins/edaletbalaev/{plugin_name}.py")
     name = "Plugins.edaletbalaev.{}".format(plugin_name)
     spec = importlib.util.spec_from_file_location(name, path)
