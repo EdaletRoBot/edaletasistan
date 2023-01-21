@@ -12,7 +12,7 @@ for name in files:
     with open(name) as a:
         patt = Path(a.name)
         plugin_name = patt.stem
-        load_mahoaga(plugin_name.replace(".py", ""))
+        load_edaletbalaev(plugin_name.replace(".py", ""))
     
 print("Qoz kimi işləyirəm Ədoşş")
 
