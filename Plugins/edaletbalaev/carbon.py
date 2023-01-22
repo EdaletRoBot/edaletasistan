@@ -6,7 +6,6 @@ from urllib.parse import quote_plus
 from urllib.error import HTTPError
 # Selenium
 from selenium.webdriver.support.ui.Select import Select, WebDriverWait
-from selenium.webdriver.support.select import Select
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium import webdriver
