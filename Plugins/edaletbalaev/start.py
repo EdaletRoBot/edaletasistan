@@ -15,12 +15,15 @@ async def start(event):
 
 
   if event.is_group:
-    return await Maho.send_message(event.chat_id, f"**Məni qrupunuza daxil etdiyiniz üçün təşəkkür edirəm ✨**")
+    return await edalet.send_message(event.chat_id, f"**Məni qrupunuza daxil etdiyiniz üçün təşəkkür edirəm ✨**")
 
                               
                                                         
                               
 @edalet.on(events.NewMessage(pattern="/help"))
 async def handler(event):
-    app.send_message(message.chat.id, "/ship - Bu kommanda vasitəsi ilə qrupunuzda random 2 istiafdəçini shipləyir\nHələki bu qədərdi gözləmədə qal")
+    await event.reply(f"{(helttext)}")
+
+helptext = /ship - Bu kommanda vasitəsi ilə qrupunuzda random 2 istiafdəçini shipləyir\nHələki budu səbir ele yavaş yavaş artacağ
+
 
