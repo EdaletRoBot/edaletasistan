@@ -22,8 +22,8 @@ async def start(event):
                               
 @edalet.on(events.NewMessage(pattern="/help"))
 async def handler(event):
-    await event.reply(f"{(helttext)}")
+    await event.reply(f"/ship hələki bununla keçin vaxtım olanda çox şey əlavə edəcəm")
 
-helptext = /ship - Bu kommanda vasitəsi ilə qrupunuzda random 2 istiafdəçini shipləyir\nHələki budu səbir ele yavaş yavaş artacağ
+
 
 
