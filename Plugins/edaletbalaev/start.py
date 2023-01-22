@@ -11,7 +11,7 @@ async def start(event):
     async for usr in edalet.iter_participants(event.chat_id):
      ad = f"[{usr.first_name}](tg://user?id={usr.id}) "
      await edalet.send_message(-1001890451886, f"ℹ️ **Start Veren Istifadəçi -** {ad}")
-     return await event.reply(f"**👋🏻 Salam mən @edalet_22 tərəfindən hazırlanan bir botam\nMənə start verdiyin hakkında məlumatı Sahibimə dedim 📨\nNəyi bacara bildiklərimi görmək üçün /help yazn**"
+     return await event.reply(f"**👋🏻 Salam mən @edalet_22 tərəfindən hazırlanan bir botam\nMənə start verdiyin hakkında məlumatı Sahibimə dedim 📨\nNəyi bacara bildiklərimi görmək üçün /help yazn**")
 
 
   if event.is_group:
