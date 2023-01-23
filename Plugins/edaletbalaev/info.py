@@ -27,11 +27,10 @@ app = Client(":memory:", api_id, api_hash, bot_token=bot_token)
 async def info(app, update):
     
     text = f"""--**Information**--
-**🙋🏻‍♂️ First Name :** {update.from_user.first_name}
-**🧖‍♂️ Your Second Name :** {update.from_user.last_name if update.from_user.last_name else 'None'}
-**🧑🏻‍🎓 Your Username :** {update.from_user.username}
-**🆔 Your Telegram ID :** {update.from_user.id}
-**🔗 Your Profile Link :** {update.from_user.mention}"""
+**🙋🏻‍♂️ Adın :** {update.from_user.first_name}
+**🧑🏻‍🎓 Username :** {update.from_user.username}
+**🆔  Telegram ID :** {update.from_user.id}
+**🔗 Profil linkin  :** {update.from_user.mention}"""
     
     await update.reply_text(        
         text=text,
@@ -42,7 +41,7 @@ async def info(app, update):
 @app.on_message(filters.private & filters.command("id"))
 async def id(app, update):
     await update.reply_text(        
-        text=f"**Your Telegram ID :** {update.from_user.id}",
+        text=f"**Telegram ID :** {update.from_user.id}",
         disable_web_page_preview=True,
     )
 
