@@ -63,26 +63,7 @@ OWNER_ID = [5540993505]
 LANGAUGE = "AZ"
 
 
-#---------------------------------------------------------------GROUP GIREKEN SALAMLAMA MSJ------------------------------------------------------------------------------#
-@app.on_message(filters.new_chat_members, group=1)
-async def hg(bot: Client, msg: Message):
-    for new_user in msg.new_chat_members:
-        if str(new_user.id) == str(Config.BOT_ID):
-            await msg.reply(
-                f'''`Salam` {msg.from_user.mention} `Məni` {msg.chat.title} `qrupuna əlavə etdiyiniz üçün təşəkkürlər🥰` \n\n **🤖 Qruplardakı userləri tag etmək üçün yaradılmış botam.\n🆘 Kömək üçün /start yazmaq kifayətdir.**''')
-#------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
 
-
-#-------------------------------------------------------------OWNERS SALAMLAMA MSJ---------------------------------------------------------------------------------------#
-      
-#	elif str(new_user.id) == str(Config.OWNER_ID):
-#           await msg.reply('🤖 [Ədalət 𝗧𝗮𝗴𝗴𝗲𝗿](https://t.me/EdaletSup)-un Sahibi, Qrupa Qatıldı.\n Xoş Gəldin  Aramıza Sahib, Necəsən?🥰.')
-
-	
-	
-	
-#-------------------------------------------------------------VERİTABANI VERİ GİRİŞ ÇIKIŞI---------------------------------------------------------------------------------------#
- 
 class Database: 
     def __init__(self, uri, database_name):
         self._client = motor.motor_asyncio.AsyncIOMotorClient(uri)
@@ -466,7 +447,7 @@ class LAN(object):
 
     elif LANGAUGE == "AZ":
 
-        BILDIRIM = "```📣 Yeni İsmarıc``` \n\n#YENI_ISTIFADƏÇİ **botu başlatdı!** \n\n🏷 isim: `{}` \n📮 istifadəçi ID: `{}` \n🧝🏻‍♂️ Profil linki: [{}](tg://user?id={})"
+        BILDIRIM = "```📣 Yeni İsmarıc``` \n\n#YENI_ISTIFADƏÇİ **botu başlatdı!** \n\n🏷 Adı: `{}` \n📮 istifadəçi ID: `{}` \n🧝🏻‍♂️ Profil linki: [{}](tg://user?id={})"
         GRUP_BILDIRIM = "```📣 Yeni İsmarıc``` \n\n#YENI_QRUP **botu başlatdı!** \n\n🏷 Qrupa əlavə edən: `{}` \n📮 Qrupa əlavə edən istifadəçi ID: `{}` \n🧝🏻‍♂️ Profil linki: [{}](tg://user?id={})\n Qrupun adı: {}\n Qrupun ID: {}\n Qrupun mesaj linki ( sadəcə açıq qruplar): [Buraya Toxun](https://t.me/c/{}/{})"
         SAHIBIME = "sahibimə"
         PRIVATE_BAN = "Məyusam, əngəlləndiniz! Bunun bir xəta olduğunu düşünürsünüzsə {} yazın."
