@@ -1,4 +1,4 @@
-from Plugins.komekci.eventsimport register
+from Plugins.komekci.events import register
 from Plugins.komekci.edaletconfig import edalet
 from telethon.tl.functions.users import GetFullUserRequest
 from time import time
