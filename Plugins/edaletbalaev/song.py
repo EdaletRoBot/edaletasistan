@@ -1,77 +1,80 @@
+from pyrogram import Client, filters
+import asyncio
 import os
-import logging
-import requests
-import aiohttp
-import youtube_dl
-from pyrogram import filters, Client, idle
-from youtube_search import YoutubeSearch
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
-from Config import API_ID, API_HASH, BOT_TOKEN
+from pytube import YouTube
+from pyrogram.types import InlineKeyboardMarkup
+from pyrogram.types import InlineKeyboardButton
+from youtubesearchpython import VideosSearch
+from Config import Config
 
 
-# logging
-bot = Client(
-   "Song Downloader",
-   api_id=API_ID,
-   api_hash=API_HASH,
-   bot_token=BOT_TOKEN,
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(name)s - [%(levelname)s] - %(message)s'
 )
+LOGGER = logging.getLogger(__name__)
 
-@bot.on_message(filters.command("song") & ~filters.edited)
-async def song(_, message):
-    if len(message.command) < 2:
-       return await message.reply("**Usage:**\n - `Eg:- /song Saybu Asta dur`")
-    query = message.text.split(None, 1)[1]
-    shed = await message.reply("🔎 Sorğu axtarılır...")
-    ydl_opts = {
-       "format": "bestaudio[ext=m4a]",
-       "geo-bypass": True,
-       "nocheckcertificate": True,
-       "outtmpl": "downloads/%(id)s.%(ext)s",
-       }
+api_id = Config.API_ID
+api_hash = Config.API_HASH
+bot_token = Config.BOT_TOKEN
+bot_username = Config.BOT_USERNAME
+bot_name = Config.BOT_NAME
+
+
+#-#-#-# Pyrogram Başlanğıc #-#-#-#
+app = Client(":memory:", api_id, api_hash, bot_token=bot_token)
+
+
+
+
+
+
+
+def yt_search(song):
+    videosSearch = VideosSearch(song, limit=1)
+    result = videosSearch.result()
+    if not result:
+        return False
+    else:
+        video_id = result["result"][0]["id"]
+        url = f"https://youtu.be/{video_id}"
+        return url
+
+@app.on_message(filters.command("song"))
+async def song(client, message):
+    chat_id = message.chat.id
+    user_id = message.from_user["id"]
+    add_chat_to_db(str(chat_id))
+    args = get_arg(message) + " " + "song"
+    if args.startswith(" "):
+        await message.reply("Enter a song name. Check /help")
+        return ""
+    status = await message.reply("🔎Searching song from YouTube 📺.. Please wait some time ⏳️ © @EdaletRoBot ")
+    video_link = yt_search(args)
+    if not video_link:
+        await status.edit("😔Song not found.")
+        return ""
+    yt = YouTube(video_link)
+    audio = yt.streams.filter(only_audio=True).first()
     try:
-        results = YoutubeSearch(query, max_results=1).to_dict()
-        link = f"https://youtube.com{results[0]['url_suffix']}"
-        #print(results)
-        title = results[0]["title"][:40]       
-        thumbnail = results[0]["thumbnails"][0]
-        thumb_name = f'thumb{title}.jpg'
-        thumb = requests.get(thumbnail, allow_redirects=True)
-        open(thumb_name, 'wb').write(thumb.content)
-
-        duration = results[0]["duration"]
-        url_suffix = results[0]["url_suffix"]
-        views = results[0]["views"]
-        channel = results[0]["channel"]
-    except Exception as e:
-        await shed.edit(
-            "❌ Found Nothing.\n\nTry another keywork or maybe spell it properly."
-        )
-        print(str(e))
-        return
-    await shed.edit("📥 Yüklənir...")
-    try:
-        with youtube_dl.YoutubeDL(ydl_opts) as ydl:
-            info_dict = ydl.extract_info(link, download=False)
-            audio_file = ydl.prepare_filename(info_dict)
-            ydl.process_info(info_dict)
-        rep = "🎵 Musiqi Kanalım -  @AudioWaveMusic"
-        secmul, dur, dur_arr = 1, 0, duration.split(':')
-        for i in range(len(dur_arr)-1, -1, -1):
-            dur += (int(dur_arr[i]) * secmul)
-            secmul *= 3
-        await shed.edit("📤 Göndərilir...")
-        s = await message.reply_audio(audio_file, caption=rep, thumb=thumb_name, parse_mode='md', title=title, duration=dur, performer=channel)
-        await shed.delete()
-    except Exception as e:
-        await shed.edit("❌ Xəta.!")
-        print(e)
-
-    try:
-        os.remove(audio_file)
-        os.remove(thumb_name)
-    except Exception as e:
-        print(e)
-
-bot.start()
-idle()
+        download = audio.download(filename=f"{str(user_id)}")
+    except Exception as ex:
+        await status.edit("Failed to download song")
+        LOGGER.error(ex)
+        return ""
+    rename = os.rename(download, f"{str(user_id)}.mp3")
+    await app.send_chat_action(message.chat.id, "upload_audio")
+    await app.send_audio(
+        chat_id=message.chat.id,
+        audio=f"{str(user_id)}.mp3",
+        duration=int(yt.length),
+        title=str(yt.title),
+        performer=str(yt.author),
+        reply_to_message_id=message.message_id,
+    )
+    await status.delete()
+    os.remove(f"{str(user_id)}.mp3")
+   
+   
+print(">> Song işləyir <<")
+app.start()
