@@ -19,5 +19,3 @@ print("Qoz kimi işləyirəm Ədoşş")
 
 if __name__ == "__main__":
     edalet.run_until_disconnected()
-
-bot.run()
