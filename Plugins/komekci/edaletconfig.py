@@ -1,5 +1,5 @@
 from telethon import TelegramClient
-
+from pyrogram import Client
 # Config məlumatları
 
 # Telegram Client (Telethon)
