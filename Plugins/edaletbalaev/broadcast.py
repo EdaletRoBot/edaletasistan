@@ -54,9 +54,9 @@ app = Client(":memory:", api_id, api_hash, bot_token=bot_token)
 
 ############## DEĞİŞKENLER ##############
 
-DATABASE_URL = "mongodb+srv://EdaletBalaev1:Edalet2023@cluster0.qdvcji2.mongodb.net/?retryWrites=true&w=majority"
-BOT_USERNAME = "GUNELTAG_BOT"
-LOG_CHANNEL = -1001815166089
+DATABASE_URL = "mongodb+srv://yenitagbotu:rosetagbotv2@cluster0.ptsfkij.mongodb.net/yenitagbotu?retryWrites=true&w=majority"
+BOT_USERNAME = "EdaletRoBot"
+LOG_CHANNEL = -1001890451886
 GROUP_SUPPORT = "Edaletsup"
 GONDERME_TURU = False
 OWNER_ID = [5540993505]
