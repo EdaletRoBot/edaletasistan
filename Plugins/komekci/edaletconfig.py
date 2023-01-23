@@ -1,5 +1,4 @@
 from telethon import TelegramClient
-from pyrogram import Client
 # Config məlumatları
 
 # Telegram Client (Telethon)
@@ -9,9 +8,3 @@ bot_token = "5883816340:AAFJpGNHNPNvogeKaLH0duNJjpchsmQ1UOg"
 
 edalet = TelegramClient('edalet', API_ID, API_HASH).start(bot_token=bot_token)
 
-bot = Client(
-    'LegendMucis',
-    bot_token = Config.bot_token,
-    api_id = Config.API_ID,
-    api_hash = Config.API_HASH
-)
