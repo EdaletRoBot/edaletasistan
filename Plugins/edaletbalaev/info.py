@@ -48,4 +48,4 @@ async def id(app, update):
 
 
 print("İnfo modulu pis deyil")
-Bot.run()
+app.run()
