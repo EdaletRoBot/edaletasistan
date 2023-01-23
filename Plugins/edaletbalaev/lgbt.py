@@ -1,10 +1,18 @@
 from Plugins.komekci.events import register
-from Plugins.komekci.edaletconfig import edalet
 from telethon.tl.functions.users import GetFullUserRequest
 from time import time
 from requests import get, post
 from os import remove
 from telegraph import upload_file
+from telethon import TelegramClient
+# Config məlumatları
+
+# Telegram Client (Telethon)
+API_ID = 28054551
+API_HASH = "64a0620c2644ceff0c1058a4ffc861ad"
+bot_token = "5883816340:AAELK7GZh77Q9WtBSMLVc3E6SokU6ldPLYo"
+
+edalet = TelegramClient('edalet', API_ID, API_HASH).start(bot_token=bot_token)
 
 
 @edalet.on(events.NewMessage(pattern="^/lgbt$"))
@@ -29,6 +37,7 @@ async def lgbt(event):
 
 
 Print("Lgbt dide hemiseki kimi")
+
 
 
 
@@ -61,8 +70,10 @@ async def tweet(event):
     await event.delete()
     remove(foto)
 
-    
-Print("Hahahahaahah phub")
+print("Edalet Balaev")
+
+edalet.run_until_disconnected()
+
 
 
     
