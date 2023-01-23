@@ -9,9 +9,9 @@ from Config import Config
 
 
 logging.basicConfig(
-    level=logging.INFO,
-    format='%(name)s - [%(levelname)s] - %(message)s'
+    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s", level=logging.INFO
 )
+
 LOGGER = logging.getLogger(__name__)
 
 api_id = Config.API_ID
