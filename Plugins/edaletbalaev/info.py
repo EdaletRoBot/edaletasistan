@@ -23,7 +23,7 @@ app = Client(":memory:", api_id, api_hash, bot_token=bot_token)
 
 
 @app.on_message(filters.private & filters.command("info"))
-async def info(bot, update):
+async def info(app, update):
     
     text = f"""--**Information**--
 **🙋🏻‍♂️ First Name :** {update.from_user.first_name}
@@ -39,11 +39,10 @@ async def info(bot, update):
 
 
 @app.on_message(filters.private & filters.command("id"))
-async def id(bot, update):
+async def id(app, update):
     await update.reply_text(        
         text=f"**Your Telegram ID :** {update.from_user.id}",
         disable_web_page_preview=True,
-        reply_markup=BUTTONS
     )
 
 
