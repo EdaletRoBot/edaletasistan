@@ -9,6 +9,8 @@ urek = ['❤️','🧡','💛','💚','💙','💜','🖤','🤍','🤎','❤️
 
 @edalet.on(events.NewMessage(pattern="^/eros ?(.*)|^/ship ?(.*)"))
 async def eros(event):
+     if event.is_private:
+          return await event.respond("**Bu əmr qruplar üçün etibarlıdır! ** ")
      qrup = await event.get_chat() 
      istifadeciler = await edalet.get_participants(qrup)
      sev1, sev2 = random.sample(istifadeciler, 2)
@@ -16,8 +18,7 @@ async def eros(event):
      await asyncio.sleep(2)
      await secirem.delete()
      await event.reply(f"{random.choice(urek)} **Cütlüklər:**\n"
-                       f" [{sev1.first_name}](tg://user?id={sev1.id})"
-                       f" [{sev2.first_name}](tg://user?id={sev2.id})\n"
+                       f" [{sev1.first_name}](tg://user?id={sev1.id})" + f" [{sev2.first_name}](tg://user?id={sev2.id})\n"
                        f"♥️ Sevgi Faizi: {random.choice(faiz)}")
     
     
