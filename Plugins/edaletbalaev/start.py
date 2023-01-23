@@ -10,8 +10,8 @@ async def start(event):
   if event.is_private:
     async for usr in edalet.iter_participants(event.chat_id):
      ad = f"[{usr.first_name}](tg://user?id={usr.id}) "
-     await edalet.send_message(-1001890451886, f"ℹ️ **Start Veren Istifadəçi -** {ad}")
-     return await event.reply(f"**👋🏻 Salam mən @edalet_22 tərəfindən hazırlanan bir botam\nMənə start verdiyin hakkında məlumatı Sahibimə dedim 📨\nNəyi bacara bildiklərimi görmək üçün /help yazn**")
+     await edalet.send_message(-1001890451886, f"📮 **Start Veren Istifadəçi -** {ad}")
+     return await event.reply(f"**👋🏻 Salam mən @edalet_22 tərəfindən hazırlanan bir botam\nMənə start verdiyin hakkında məlumatı Sahibimə dedim 📨\nKömək üçün /help yazn**")
 
 
   if event.is_group:
@@ -22,7 +22,9 @@ async def start(event):
                               
 @edalet.on(events.NewMessage(pattern="/help"))
 async def handler(event):
-    await event.reply(f"/ship hələki bununla keçin vaxtım olanda çox şey əlavə edəcəm")
+    await event.reply(f"📮 @EdaletRoBot əmirləri bunlardır 📮\n\n\n/ship - Qrup içərisində iki random istifadəçini shipləyir\n\nSahibim bekar olduqca yeni funksiyalar əlave edəcək")
+    
+ 
 
 
 
