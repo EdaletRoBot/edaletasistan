@@ -1,8 +1,8 @@
 import os, youtube_dl, requests, time
-from Plugins.komekci import edaletconfig
+from Plugins.komekci.edaletconfig import bot
 from youtube_search import YoutubeSearch
 from pyrogram.handlers import MessageHandler
-from pyrogram import Client, filters
+from pyrogram import filters
 import yt_dlp
 from pyrogram.types import (
     InlineKeyboardButton,
@@ -11,19 +11,7 @@ from pyrogram.types import (
 )
 
 
-#config#
-
-bot = Client(
-    'LegendMucis',
-    bot_token = Config.BOT_TOKEN,
-    api_id = Config.API_ID,
-    api_hash = Config.API_HASH
-)
-
-
-
-
-
+#song
 
 @bot.on_message(filters.command("song") & ~filters.edited)
 def bul(_, message):
@@ -50,15 +38,15 @@ def bul(_, message):
             info_dict = ydl.extract_info(link, download=False)
             audio_file = ydl.prepare_filename(info_dict)
             ydl.process_info(info_dict)
-        rep = f"🎵 Yüklədi [Music Bot](https://t.me/{Config.BOT_USERNAME})"
+        rep = f"🎵 Yüklədi [Music Bot](https://t.me/EdaletRoBot"
         secmul, dur, dur_arr = 1, 0, duration.split(":")
         for i in range(len(dur_arr) - 1, -1, -1):
             dur += int(float(dur_arr[i])) * secmul
             secmul *= 60
         m.edit("📤 Yüklənir...")
-        message.reply_audio(audio_file, caption=rep, parse_mode='md',quote=False, title=title, duration=dur, thumb=thumb_name, performer="LegendMusic")
+        message.reply_audio(audio_file, caption=rep, parse_mode='md',quote=False, title=title, duration=dur, thumb=thumb_name, performer="EdaletRoBot")
         m.delete()
-        bot.send_audio(chat_id=Config.PLAYLIST_ID, audio=audio_file, caption=rep, performer="@LegendMusic", parse_mode='md', title=title, duration=dur, thumb=thumb_name)
+        bot.send_audio(chat_id=Config.PLAYLIST_ID, audio=audio_file, caption=rep, performer="@EdaletRoBot", parse_mode='md', title=title, duration=dur, thumb=thumb_name)
     except Exception as e:
         m.edit('**⚠️ Gözlənilməyən xəta yarandı.**\n**Xahiş edirəm xətanı sahibimə xəbərdar et!**')
         print(e)
