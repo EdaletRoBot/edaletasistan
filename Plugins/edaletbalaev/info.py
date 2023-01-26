@@ -24,3 +24,4 @@ async def id(event):
         else:
             return await event.reply(f"**İstifadəçi id:** `{user_id}`\n**Qrup id:** `{chat_id}`")
 
+Print("Id qoz kimidi")
