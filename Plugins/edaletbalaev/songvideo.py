@@ -53,7 +53,7 @@ def song(_, message):
             info_dict = ydl.extract_info(link, download=False)
             audio_file = ydl.prepare_filename(info_dict)
             ydl.process_info(info_dict)
-        rep = f'🎧 **Başlıq**: [{title[:35]}]({link})\n⏳ **Müddət**: `{duration}`\n'f"🎵 Yüklədi [Music Bot](https://t.me/{Config.BOT_USERNAME})"
+        rep = f'🎧 **Başlıq**: [{title[:35]}]({link})\n⏳ **Müddət**: `{duration}`\n'f"🎵 Yüklədi [EdaletRoBot](https://t.me/EdaletRoBot"
         secmul, dur, dur_arr = 1, 0, duration.split(":")
         for i in range(len(dur_arr) - 1, -1, -1):
             dur += int(float(dur_arr[i])) * secmul
@@ -61,7 +61,7 @@ def song(_, message):
         m.edit("📤 Yüklənir..")
         message.reply_audio(audio_file, caption=rep, parse_mode='md',quote=False, title=title, duration=dur, thumb=thumb_name, performer=f"{Config.PLAYLIST_NAME}")
         m.delete()
-        bot.send_audio(chat_id=Config.PLAYLIST_ID, audio=audio_file, caption=rep, performer=f"{Config.BOT_USERNAME}", parse_mode='md', title=title, duration=dur, thumb=thumb_name)
+        bot.send_audio(chat_id=Config.PLAYLIST_ID, audio=audio_file, caption=rep, performer=f"EdaletRoBot", parse_mode='md', title=title, duration=dur, thumb=thumb_name)
     except Exception as e:
         m.edit('**⚠️ Gözlənilməyən xəta yarandı.**\n**Xahiş edirəm xətanı sahibimə xəbərdar et!**')
         print(e)
