@@ -10,3 +10,4 @@ class Config():
     BOT_USERNAME = os.environ.get("BOT_USERNAME","Ədalət")
     BOT_NAME = os.environ.get("BOT_NAME","EdaletRoBot")
     PLAYLIST_ID = int(os.environ.get("PLAYLIST_ID ","-1001834511938"))
+    PLAYLIST_NAME = os.environ.get("PLAYLIST_NAME","EdaletRoBot PlayList")
