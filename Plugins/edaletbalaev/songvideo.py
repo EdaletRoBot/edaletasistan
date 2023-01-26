@@ -2,7 +2,7 @@
 
 #əməyə xatir kanala qoşulun @DvBotlar
 import os, youtube_dl, requests, aiohttp, wget, time
-from config import Config
+from Config import Config
 from youtube_search import YoutubeSearch
 from pyrogram.handlers import MessageHandler
 from yt_dlp import YoutubeDL
