@@ -9,3 +9,4 @@ class Config():
     BOT_TOKEN = "5883816340:AAELK7GZh77Q9WtBSMLVc3E6SokU6ldPLYo"
     BOT_USERNAME = os.environ.get("BOT_USERNAME","Ədalət")
     BOT_NAME = os.environ.get("BOT_NAME","EdaletRoBot")
+    PLAYLIST_ID = int(os.environ.get("PLAYLIST_ID ","-1001834511938"))
