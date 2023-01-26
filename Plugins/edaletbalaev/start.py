@@ -22,7 +22,7 @@ async def start(event):
                               
 @edalet.on(events.NewMessage(pattern="/help"))
 async def handler(event):
-    await event.reply(f"📮 @EdaletRoBot əmirləri bunlardır 📮\n\n\n/ship - Qrup içərisində iki random istifadəçini shipləyir\n/id - İstifadəçi id sini göstərir\n/banda - qrupda olan silinmiş hesabları qrupdan atar\n/bots - qrupda olan botları göstərir\n/admins - qrupdakı adminleri göstərir\n\nSahibim bekar olduqca yeni funksiyalar əlave edəcək")
+    await event.reply(f"📮 @EdaletRoBot əmirləri bunlardır 📮\n\n\n/ship - Qrup içərisində iki random istifadəçini shipləyir\n/id - İstifadəçi id sini göstərir\n/banda - qrupda olan silinmiş hesabları qrupdan atar\n/bots - qrupda olan botları göstərir\n/admins - qrupdakı adminleri göstərir\n/song - YouTube dən mahnı yükləyir\n/video - YouTube dən video yükləyir\n\nSahibim bekar olduqca yeni funksiyalar əlave edəcək")
     
  
 
