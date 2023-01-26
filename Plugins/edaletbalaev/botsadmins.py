@@ -37,4 +37,4 @@ async def tag_admin(event):
         await event.reply(text)
     raise StopPropagation
 
-Print("Bost ve Admins listide isleyir")
+print("Bost ve Admins listide isleyir")
