@@ -32,7 +32,7 @@ GOOGLE_CHROME_BIN = "/app/.apt/usr/bin/google-chrome"
 
 CARBONLANG = "auto"
 
-@aykhan.on(events.NewMessage(pattern="^/carbon ?(.*)"))
+@edalet.on(events.NewMessage(pattern="^/carbon ?(.*)"))
 
 async def carbon_api(e):
 
