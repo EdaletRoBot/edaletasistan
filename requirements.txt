@@ -15,3 +15,13 @@ youtube_search
 python-arq
 wget 
 yt-dlp
+
+selenium>=4.2.0
+
+google-api-python-client
+
+google-auth-oauthlib
+
+httplib2
+
+chromedriver-autoinstaller
