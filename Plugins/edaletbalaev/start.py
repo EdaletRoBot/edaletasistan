@@ -1,6 +1,7 @@
 from Plugins.komekci.edaletconfig import edalet
 from telethon import events, Button
 from telethon.tl.types import ChannelParticipantsAdmins
+import random
 
 
 
