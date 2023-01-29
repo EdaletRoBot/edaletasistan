@@ -26,6 +26,29 @@ async def handler(event):
     
  
 
+@edalet.on(events.ChatAction)
+async def handler(event):
+    if event.user_joined:
+        await event.reply(random.choice(userjoin))
+
+
+
+@edalet.on(events.ChatAction)
+async def handler(event):
+    if event.user_left:
+        await event.reply("Əla Birdə gəlmə")
+
+
+userjoin = (
+
+    "Salam qrupumuza xoş gəldin",
+    "Harahdir, Burda imişki",
+    "Həmişə sən gələsən",
+    "Bıyyyy kimləri görürəm",
+    "Gözümüz yolda qalmışdı gəl çıxda",
+    "Yenə gəldidə bu",
+)
+
 
 
 
