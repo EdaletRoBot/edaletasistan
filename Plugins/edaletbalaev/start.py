@@ -30,6 +30,16 @@ async def handler(event):
 async def handler(event):
     if event.user_joined:
         await event.reply(random.choice(userjoin))
+        
+        
+        
+        
+@edalet.on(events.NewMessage(pattern='@edalet_22'))
+@edalet.on(events.NewMessage(pattern='edalet_22'))
+@edalet.on(events.NewMessage(pattern='ədoş'))
+@edalet.on(events.NewMessage(pattern='edalet'))
+async def handler(event):
+    await event.reply(random.choice(edalet))
 
 
 
@@ -49,6 +59,20 @@ userjoin = (
     "Yenə gəldidə bu",
 )
 
+
+edalet = (
+    "Az tağ elə sahibimi",
+    "Buyur mənə de",
+    "Ə di nolub Ədalət Ədalət",
+    "Buyur sözünü mənə de",
+    "/ban az tağ ele",
+    "Ay xanım yer ged o yana istirahət edirem",
+    "Yatre o yapon rejimi ilədi her an yata biler",
+    "az bəsdidəəəəəəə",
+    "Get çay gətir,Cəld ol",
+    "manatdan 1 nefer qaldı",
+    "Kiməm mən"
+)
 
 
 
