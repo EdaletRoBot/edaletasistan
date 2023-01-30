@@ -2,7 +2,7 @@ from Plugins.komekci.edaletconfig import edalet
 from telethon import events, Button
 from telethon.tl.types import ChannelParticipantsAdmins
 import random
-ad = f"[{usr.first_name}](tg://user?id={usr.id}) "
+#ad = f"[{usr.first_name}](tg://user?id={usr.id}) "
 
 
 @edalet.on(events.NewMessage(pattern="/start"))
