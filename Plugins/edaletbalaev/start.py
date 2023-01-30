@@ -2,15 +2,13 @@ from Plugins.komekci.edaletconfig import edalet
 from telethon import events, Button
 from telethon.tl.types import ChannelParticipantsAdmins
 import random
+ad = f"[{usr.first_name}](tg://user?id={usr.id}) "
 
 
-
-@edalet.on(events.NewMessage(pattern="^/start$"))
+@edalet.on(events.NewMessage(pattern="/start"))
 async def start(event):
   if event.is_private:
-    async for usr in client.iter_participants(event.chat_id):
-     ad = f"[{usr.first_name}](tg://user?id={usr.id}) "
-     await edalet.send_message(-1001890451886, f"📮 **Start Veren Istifadəçi -** {ad}")
+    #await edalet.send_message(-1001890451886, f"📮 **Start Veren Istifadəçi -** {ad}")
      return await event.reply(f"**👋🏻 Salam {ad} Mən @edalet_22 tərəfindən hazırlanan bir botam\nMənə start verdiyin hakkında məlumatı Sahibimə dedim 📨\nKömək üçün /help yazn**")
 
 
