@@ -12,7 +12,7 @@ async def start(event):
     async for usr in edalet.iter_participants(event.chat_id):
      ad = f"[{usr.first_name}](tg://user?id={usr.id}) "
      await edalet.send_message(-1001890451886, f"📮 **Start Veren Istifadəçi -** {ad}")
-     return await event.reply(f"**👋🏻 Salam mən @edalet_22 tərəfindən hazırlanan bir botam\nMənə start verdiyin hakkında məlumatı Sahibimə dedim 📨\nKömək üçün /help yazn**")
+     return await event.reply(f"**👋🏻 Salam {ad} Mən @edalet_22 tərəfindən hazırlanan bir botam\nMənə start verdiyin hakkında məlumatı Sahibimə dedim 📨\nKömək üçün /help yazn**")
 
 
   if event.is_group:
@@ -53,11 +53,11 @@ async def handler(event):
 userjoin = (
 
     "Salam qrupumuza xoş gəldin",
-    "Harahdir, Burda imişki",
-    "Həmişə sən gələsən",
-    "Bıyyyy kimləri görürəm",
-    "Gözümüz yolda qalmışdı gəl çıxda",
-    "Yenə gəldidə bu",
+    "{ad} Harahdir, Burda imişki",
+    "Həmişə sən gələsən ay {ad}",
+    "Bıyyyy kimləri görürəm {ad}",
+    "Gözümüz yolda qalmışdı {ad} gəl çıxda",
+    "Yenə gəldidə bu {ad}",
 )
 
 
@@ -66,13 +66,11 @@ edalet = (
     "Buyur mənə de",
     "Ə di nolub Ədalət Ədalət",
     "Buyur sözünü mənə de",
-    "/ban az tağ ele",
+    "/ban {ad} az tağ ele",
     "Ay xanım yer ged o yana istirahət edirem",
     "Yatre o yapon rejimi ilədi her an yata biler",
     "az bəsdidəəəəəəə",
     "Get çay gətir,Cəld ol",
-    "manatdan 1 nefer qaldı",
-    "Kiməm mən"
 )
 
 
