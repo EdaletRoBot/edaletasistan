@@ -16,3 +16,7 @@ async def kopya(event):
         return
     await mesaj.reply("⚡️ Bu mesajı Ədalətin arşivinə atdım")
     await event.client.send_message(OGRA_QRUP, mesaj)
+    
+    
+    
+print("Oğurla oğru kimi işləyir")
