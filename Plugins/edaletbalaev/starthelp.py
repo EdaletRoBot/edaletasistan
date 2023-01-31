@@ -13,9 +13,7 @@ from time import time
 @edalet.on(events.NewMessage(pattern="^/start$"))
 async def start(event):
   if event.is_private:
-    async for usr in edalet.iter_participants(event.chat_id)
-     ad = f"[{usr.first_name}](tg://user?id={usr.id}) "
-     await event.reply(f"Salam {ad},Mən [Ədalət](t.me/edalet_22) tərəfindən yazılmış bir çox funksiyaya malik botam", buttons=(
+     await event.reply(f"Salam 👋,Mən [Ədalət](t.me/edalet_22) tərəfindən yazılmış bir çox funksiyaya malik botam", buttons=(
         [Button.inline("📖 Əmrlər", data="help")],
         [Button.url("🔊 PlayList", url="https://t.me/EdaletRoBotPlayList"),
         Button.url("📣 Kanal", url="https://t.me/RoBotlarimTg"),
@@ -37,9 +35,7 @@ async def start(event):
 
 @edalet.on(events.callbackquery.CallbackQuery(data="start"))
 async def handler(event):
-    async for usr in edalet.iter_participants(event.chat_id):
-     ad = f"[{usr.first_name}](tg://user?id={usr.id}) "
-     await event.edit(f"Salam {ad},Mən [Ədalət](t.me/edalet_22) tərəfindən yazılmış bir çox funksiyaya malik botam", buttons=(
+     await event.edit(f"Salam 👋,Mən [Ədalət](t.me/edalet_22) tərəfindən yazılmış bir çox funksiyaya malik botam", buttons=(
         [Button.inline("📖 Əmrlər", data="help")],
         [Button.url("🔊 PlayList", url="https://t.me/EdaletRoBotPlayList"),
         Button.url("📣 Kanal", url="https://t.me/RoBotlarimTg"),
