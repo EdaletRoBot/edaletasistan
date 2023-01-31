@@ -9,8 +9,6 @@ import random
 @edalet.on(events.NewMessage(pattern="/start"))
 async def start(event):
   if event.is_private:
-    ad = f"[{usr.first_name}](tg://user?id={usr.id}) "
-    await edalet.send_message(-1001890451886, f"📮 **Start Veren Istifadəçi -** {ad}")
      return await event.reply(f"**👋🏻 Salam {ad} Mən @edalet_22 tərəfindən hazırlanan bir botam\nMənə start verdiyin hakkında məlumatı Sahibimə dedim 📨\nKömək üçün /help yazn**")
 
 
@@ -52,11 +50,11 @@ async def handler(event):
 userjoin = (
 
     "Salam qrupumuza xoş gəldin",
-    "{ad} Harahdir, Burda imişki",
-    "Həmişə sən gələsən ay {ad}",
-    "Bıyyyy kimləri görürəm {ad}",
-    "Gözümüz yolda qalmışdı {ad} gəl çıxda",
-    "Yenə gəldidə bu {ad}",
+    "Harahdir, Burda imişki",
+    "Həmişə sən gələsən",
+    "Bıyyyy kimləri görürəm",
+    "Gözümüz yolda qalmışdı gəl çıxda",
+    "Yenə gəldidə bu",
 )
 
 
