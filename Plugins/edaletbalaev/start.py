@@ -4,11 +4,12 @@ from telethon.tl.types import ChannelParticipantsAdmins
 import random
 
 
-
-
-@edalet.on(events.NewMessage(pattern="/start"))
+@Maho.on(events.NewMessage(pattern="^/start$"))
 async def start(event):
   if event.is_private:
+    async for usr in Maho.iter_participants(event.chat_id):
+     ad = f"[{usr.first_name}](tg://user?id={usr.id}) "
+     await Maho.send_message(-1001210894866, f"📮**Start Veren Istifadəçi - ** {ad}")  
      return await event.reply(f"**👋🏻 Salam {ad} Mən @edalet_22 tərəfindən hazırlanan bir botam\nMənə start verdiyin hakkında məlumatı Sahibimə dedim 📨\nKömək üçün /help yazn**")
 
 
