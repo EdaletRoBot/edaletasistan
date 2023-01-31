@@ -1,6 +1,6 @@
 # **🐺 EdaletRoBot**
 
-## **🌐 özüm ve bəzi kodları @aykhan_s(https://t.me/aykhan_s) köməyi ilə yazmışam**
+## **🌐 özüm ve bəzi kodları @aykhan_s (https://t.me/aykhan_s) köməyi ilə yazmışam**
 
 - Python dosyalarını 15 farklı kombinasyonda şifreleyebilir.
 
