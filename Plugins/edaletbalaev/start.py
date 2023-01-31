@@ -13,7 +13,7 @@ from time import time
 @edalet.on(events.NewMessage(pattern="^/start$"))
 async def start(event):
   if event.is_private:
-    async for usr in edalet.iter_participants(event.chat_id):
+    async for usr in event.chat.iter_participants():
      ad = f"[{usr.first_name}](tg://user?id={usr.id}) "
      await event.reply(f"Salam {ad},Mən [Ədalət](t.me/edalet_22) tərəfindən yazılmış bir çox funksiyaya malik botam", buttons=(
         [Button.inline("📖 Əmrlər", data="help")],
