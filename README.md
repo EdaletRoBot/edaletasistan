@@ -2,6 +2,7 @@
 
 ## **🌐 özüm ve bəzi kodları t.me/aykhan_s köməyi ilə yazmışam**
 </br>
+
 - İçində sadə funksiyalar var.
 
 - Özünü multi bot kimi aparır.
