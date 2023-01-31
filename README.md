@@ -1,6 +1,6 @@
 # **🐺 EdaletRoBot**
 
-<img title="PP" height="25" src="https://avatars.githubusercontent.com/u/99437747?v=4">   
+<img title="PP" height="400" src="https://avatars.githubusercontent.com/u/99437747?v=4">   
 
 ## **🌐 Əsasən özüm ve bəzi kodları t.me/aykhan_s köməyi ilə yazmışam**
 </br>
