@@ -1,5 +1,5 @@
 # **🐺 EdaletRoBot**
-
+https://avatars.githubusercontent.com/u/99437747?v=4
 ## **🌐 Əsasən özüm ve bəzi kodları t.me/aykhan_s köməyi ilə yazmışam**
 </br>
 
