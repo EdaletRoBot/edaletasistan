@@ -1,3 +1,7 @@
+Eyer reponu açığ görmüsəndə məndən icazəsiz götürmə 
+göyürsən ata diyərsən
+
+
 Özüme ordan bir eded assitan alayim
 
 
