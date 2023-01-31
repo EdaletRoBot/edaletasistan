@@ -2,6 +2,12 @@ from Plugins.komekci.edaletconfig import edalet
 from telethon import events, Button
 from telethon.tl.types import ChannelParticipantsAdmins
 import random
+#
+from requests import get, post
+from os import remove
+from telethon.tl.functions.users import GetFullUserRequest
+from time import time
+
 
 
 @edalet.on(events.NewMessage(pattern="^/start$"))
