@@ -1,7 +1,7 @@
 # **🐺 EdaletRoBot**
 
 ## **🌐 özüm ve bəzi kodları t.me/aykhan_s köməyi ilə yazmışam**
-
+</br>
 - İçində sadə funksiyalar var.
 
 - Özünü multi bot kimi aparır.
@@ -14,6 +14,6 @@
 
 ### **📡 Əlaqə :**
 
-[![Github](https://img.shields.io/badge/Github-525252?style=for-the-badge&logo=github)](https://github.com/aylak-github) [![Opensource](https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/G4rip)
+[![Github](https://img.shields.io/badge/Github-525252?style=for-the-badge&logo=github)](https://github.com/EdaletRoBot) [![Opensource](https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/edalet_22)
 
 </br>
