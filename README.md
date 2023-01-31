@@ -1,5 +1,5 @@
 Eyer reponu açığ görmüsəndə məndən icazəsiz götürmə 
-göyürsən ata diyərsən
+götürsən ata diyərsən
 
 
 Özüme ordan bir eded assitan alayim
