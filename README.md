@@ -2,55 +2,18 @@
 
 ## **🌐 özüm ve bəzi kodları t.me/aykhan_s köməyi ilə yazmışam**
 
-- Python dosyalarını 15 farklı kombinasyonda şifreleyebilir.
+- İçində sadə funksiyalar var.
 
-- Şifrelemenin gücünün dosyanın açılma hızını etkileyeceğini unutmayın.
+- Özünü multi bot kimi aparır.
 </br>
 
-## **🪀 PyPi Kütüphanesi:**
 
-</br>
+### **💻 Qurulum:**
 
-![PyPI](https://img.shields.io/pypi/v/PyFileLock?color=yellow&logo=python&logoColor=cyan&style=for-the-badge)
-</br>
+<p align="center"><a href="https://heroku.com/deploy?template=https://github.com/Fakebody31/edaletasistan"><img align="center" alt="Heroku" width="52px" src="https://www.nicepng.com/png/full/223-2233246_heroku-logo-salesforce-heroku.png"></p>
 
-![PyPI - Downloads](https://img.shields.io/pypi/dm/PyFileLock?label=%C4%B0nd%C4%B0rme&logo=python&style=for-the-badge)
-</br>
-
-[![Python](https://img.shields.io/badge/Python-ile%20yap%C4%B1ld%C4%B1-yellow?style=for-the-badge&logo=python&logoColor=cyan)](https://python.org)
-</br>
-
-<br><a href="https://t.me/G4rip"><img src="https://github.com/aylak-github/PyFileLock/blob/master/ss.png?raw=true" width="350"></a></br>
-
-### **💻 Kurulum:**
-
-#### **Termux**
-
-```sh
-bash <(curl -L https://bit.ly/Py-File-Lock)
-```
-
-#### **Terminal**
-
-```sh
-pip install PyFileLock
-python -m PyFileLock
-```
-
-</br>
-
-📅 ***2022 (c) [GNU Affero General Public License v3.0](https://github.com/aylak-github/PyFileLock/blob/master/LICENSE) ile korunmaktadır.***
-
-</br>
-
-### **📡 İletişim :**
+### **📡 Əlaqə :**
 
 [![Github](https://img.shields.io/badge/Github-525252?style=for-the-badge&logo=github)](https://github.com/aylak-github) [![Opensource](https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/G4rip)
 
 </br>
-
-
-Özüme ordan bir eded assitan alayim
-
-
-<p align="center"><a href="https://heroku.com/deploy?template=https://github.com/Fakebody31/edaletasistan"><img align="center" alt="Heroku" width="52px" src="https://www.nicepng.com/png/full/223-2233246_heroku-logo-salesforce-heroku.png"></p>
