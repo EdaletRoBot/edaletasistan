@@ -10,10 +10,14 @@
 </br>
 
 ## Botun init və main fayıllarını telethon üçün yazdığım üçün Telethonla daha rahat olur
+</br>
 
-## Örnəy Plugin Telethon üçün
+## Örnəy Plugin Telethon üçün:
+
+</br>
 
 ```python
+
 from Plugins.komekci.edaletconfig import edalet
 from telethon import events, Button
 import random
@@ -27,9 +31,11 @@ async def start(event):
 
 
 ```
+</br>
 
-## Örnəy Plugin Pyrogram üçün
+## Örnəy Plugin Pyrogram üçün:
 
+</br>
 
 ```python
 from Config import Config
