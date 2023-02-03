@@ -82,8 +82,11 @@ app.run()
 
 ## **🕹 Qurulum:**
 
+</br>
 
 <p><a href="https://heroku.com/deploy?template=https://github.com/Fakebody31/edaletasistan"><img alt="Heroku" width="52px" src="https://www.nicepng.com/png/full/223-2233246_heroku-logo-salesforce-heroku.png"></p>
+
+</br>
 
 ### **📨 Əlaqə :**
 
