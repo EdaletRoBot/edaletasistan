@@ -47,7 +47,7 @@ async def mentionall(event):
   elif event.pattern_match.group(1) and event.reply_to_msg_id:
     return await event.respond("Mənə mətn ver.")
   else:
-    return await event.respond("**Tağı başlamaq üçün səbəb yazın.\n\n(Məsələn: /tag Hamıya Salam!)**")
+    return await event.respond("**Tağı başlamaq üçün səbəb yazın.\n\n(Məsələn: /all Hamıya Salam!)**")
   
   if mode == "text_on_cmd":
     anlik_calisan.append(event.chat_id)
@@ -71,6 +71,7 @@ async def mentionall(event):
     rxyzdev_initT = f"[{sender.first_name}](tg://user?id={sender.id})"      
     if event.chat_id in rxyzdev_tagTot:
            a = await event.respond(f"**✅ Teqləmə prosesi uğurla dayandırıldı.**\n\n**Etiklənən İnsanların Sayı:** {rxyzdev_tagTot[event.chat_id]}")
+           await sleep(10)
 
   if mode == "text_on_reply":
     anlik_calisan.append(event.chat_id)
@@ -92,3 +93,4 @@ async def mentionall(event):
     rxyzdev_initT = f"[{sender.first_name}](tg://user?id={sender.id})"      
     if event.chat_id in rxyzdev_tagTot:
            a = await event.respond(f"**✅ Teqləmə prosesi uğurla dayandırıldı.**\n\n**Etiklənən İnsanların Sayı:** {rxyzdev_tagTot[event.chat_id]}")
+           await sleep(10)
