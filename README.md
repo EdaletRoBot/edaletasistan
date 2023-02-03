@@ -11,25 +11,20 @@
 ## Örnəy Plugin
 
 ```python
-from userbot.events import register
-from userbot.cmdhelp import CmdHelp # <-- Bunu ekleyin.
+from Plugins.komekci.edaletconfig import edalet
+from telethon import events, Button
+import random
 
-@register(outgoing=True, pattern="^.deneme")
-async def deneme(event):
-    await event.edit('Gerçekten deneme!')
+@edalet.on(events.NewMessage(pattern="^/test$"))
+async def start(event):
+  if event.is_private:
+     await event.reply(f"Test dəf kimi işləyir", buttons=(
+        [Button.url("👤 Sahib", url="https://t.me/edalet_22")],
+    ), 
 
-Help = CmdHelp('deneme') # Bilgi ekleyeceğiz diyoruz.
-Help.add_command('deneme', # Komut
-    None, # Komut parametresi varsa yazın yoksa None yazın
-    'Gerçekten deneme yapıyor!', # Komut açıklaması
-    'deneme' # Örnek kullanım.
-    )
-Help.add_info('@Fusuf tarafından yapılmıştır.') # Bilgi ekleyebilirsiniz.
-# Ya da uyarı --> Help.add_warning('KULLANMA!')
-Help.add() # Ve Ekleyelim.
+
+
 ```
-
-
 ### **🕹 Qurulum:**
 
 <p><a href="https://heroku.com/deploy?template=https://github.com/Fakebody31/edaletasistan"><img alt="Heroku" width="52px" src="https://www.nicepng.com/png/full/223-2233246_heroku-logo-salesforce-heroku.png"></p>
