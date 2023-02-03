@@ -72,6 +72,7 @@ async def mentionall(event):
     if event.chat_id in rxyzdev_tagTot:
            a = await event.respond(f"**✅ Teqləmə prosesi uğurla dayandırıldı.**\n\n**Etiklənən İnsanların Sayı:** {rxyzdev_tagTot[event.chat_id]}")
            await sleep(10)
+           await a.delete()
 
   if mode == "text_on_reply":
     anlik_calisan.append(event.chat_id)
@@ -94,3 +95,4 @@ async def mentionall(event):
     if event.chat_id in rxyzdev_tagTot:
            a = await event.respond(f"**✅ Teqləmə prosesi uğurla dayandırıldı.**\n\n**Etiklənən İnsanların Sayı:** {rxyzdev_tagTot[event.chat_id]}")
            await sleep(10)
+           await a.delete()
