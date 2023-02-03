@@ -8,7 +8,8 @@
 - Özünü multi bot kimi aparır.
 </br>
 
-## Örnek Plugin
+## Örnəy Plugin
+
 ```python
 from userbot.events import register
 from userbot.cmdhelp import CmdHelp # <-- Bunu ekleyin.
@@ -27,6 +28,7 @@ Help.add_info('@Fusuf tarafından yapılmıştır.') # Bilgi ekleyebilirsiniz.
 # Ya da uyarı --> Help.add_warning('KULLANMA!')
 Help.add() # Ve Ekleyelim.
 ```
+
 
 ### **🕹 Qurulum:**
 
