@@ -8,6 +8,25 @@
 - Özünü multi bot kimi aparır.
 </br>
 
+## Örnek Plugin
+```python
+from userbot.events import register
+from userbot.cmdhelp import CmdHelp # <-- Bunu ekleyin.
+
+@register(outgoing=True, pattern="^.deneme")
+async def deneme(event):
+    await event.edit('Gerçekten deneme!')
+
+Help = CmdHelp('deneme') # Bilgi ekleyeceğiz diyoruz.
+Help.add_command('deneme', # Komut
+    None, # Komut parametresi varsa yazın yoksa None yazın
+    'Gerçekten deneme yapıyor!', # Komut açıklaması
+    'deneme' # Örnek kullanım.
+    )
+Help.add_info('@Fusuf tarafından yapılmıştır.') # Bilgi ekleyebilirsiniz.
+# Ya da uyarı --> Help.add_warning('KULLANMA!')
+Help.add() # Ve Ekleyelim.
+```
 
 ### **🕹 Qurulum:**
 
