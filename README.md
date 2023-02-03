@@ -8,7 +8,7 @@
 - Özünü multi bot kimi aparır.
 </br>
 
-## Örnəy Plugin
+## Örnəy Plugin Telethon üçün
 
 ```python
 from Plugins.komekci.edaletconfig import edalet
@@ -23,8 +23,54 @@ async def start(event):
     ), 
 
 
+```
+
+## Örnəy Plugin Pyrogram üçün
+
+
+```python
+from Config import Config
+from pyrogram.handlers import MessageHandler
+from aiohttp import ClientSession
+from pyrogram import Client, filters, idle
+from pyrogram.types import (
+    InlineKeyboardButton,
+    InlineKeyboardMarkup,
+    Message
+)
+
+app = Client(
+    'EdaletRoBot',
+    bot_token = Config.BOT_TOKEN,
+    api_id = Config.API_ID,
+    api_hash = Config.API_HASH
+)
+
+@app.on_message(filters.command(['start']))
+def start(client, message):
+    edalet = f'👋 **Salam** Bot işləyir**'
+    message.reply_text(
+        text=edalet, 
+        quote=False,
+        reply_markup=InlineKeyboardMarkup(
+            [[
+                    InlineKeyboardButton('Rəsmi Kanal ✅', url='https://t.me/EdaletProject'),
+                    InlineKeyboardButton('Playlist 🎵', url=f'https://t.me/EdaletRoBotPlayList')
+                  ],[
+                    InlineKeyboardButton('Sahib 👨🏻‍💻', url=f't.me/edalet_22')
+                ]
+            ]
+        )
+    )
+    
+
+
+app.run()
+
+
 
 ```
+
 ### **🕹 Qurulum:**
 
 <p><a href="https://heroku.com/deploy?template=https://github.com/Fakebody31/edaletasistan"><img alt="Heroku" width="52px" src="https://www.nicepng.com/png/full/223-2233246_heroku-logo-salesforce-heroku.png"></p>
