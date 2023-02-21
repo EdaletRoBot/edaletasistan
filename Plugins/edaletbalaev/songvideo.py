@@ -1,6 +1,3 @@
-#sahibim #Ruslan
-
-#əməyə xatir kanala qoşulun @DvBotlar
 import os, youtube_dl, requests, aiohttp, wget, time
 from Config import Config
 from youtube_search import YoutubeSearch
